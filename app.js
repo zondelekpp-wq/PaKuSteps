@@ -1,7 +1,7 @@
 /* PaKuSteps – one small step at a time. Offline; all data stays on the device. */
 'use strict';
 (() => {
-  const APP_VERSION = '1.1.0';
+  const APP_VERSION = '1.1.1';
   const LINKS = { paku: 'https://zondelekpp-wq.github.io/PaKu/' };       // apps a step can open (reading routine → PaKu)
   const APP_URL = 'https://zondelekpp-wq.github.io/PaKuSteps/';          // the QR code in qr.svg points here
   const GROUNDING_URL = 'https://zondelekpp-wq.github.io/PaKuGrounding/?sos=1';
