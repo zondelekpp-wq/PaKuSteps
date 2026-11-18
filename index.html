@@ -295,6 +295,16 @@ textarea{resize:vertical}
 .splash-in{text-align:center}
 .splash-ic svg{width:4rem;height:4rem;color:var(--primary)}
 .splash-h{font-size:2.6rem;font-weight:800;margin:.2rem 0}
+
+/* PaKu family */
+.fam-app{display:flex;flex-direction:column;gap:.4rem}
+.fam-app.me{border-color:var(--primary)}
+.fam-head{display:flex;align-items:center;gap:.8rem}
+.fam-ic{width:3rem;height:3rem;border-radius:12px;flex:none;background:var(--surface2)}
+.fam-head small{display:block}
+.fam-tag{display:inline-flex!important;align-items:center;gap:.25rem;margin-top:.2rem;font-weight:600;color:var(--primary);font-size:.8rem}
+.fam-tag svg{width:1em;height:1em}
+.fam-app .toggle{border-top:1px solid var(--border);padding-top:.6rem}
 </style>
 </head>
 <body>
@@ -302,6 +312,7 @@ textarea{resize:vertical}
 <div id="modal" hidden></div>
 <div id="toast" role="status" aria-live="polite" hidden></div>
 <noscript><p style="padding:1rem">PaKuSteps needs JavaScript to run.</p></noscript>
+<script src="family.js"></script>
 <script src="i18n.js"></script>
 <script src="app.js"></script>
 </body>

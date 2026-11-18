@@ -242,6 +242,7 @@ window.I18N = {
     ]
    ]
   ],
+  "tpl_read_alt": "Read a chapter of your book",
   "tpl_read": [
    "Reading time",
    [
@@ -495,6 +496,7 @@ window.I18N = {
     ]
    ]
   ],
+  "tpl_read_alt": "Przeczytaj rozdział swojej książki",
   "tpl_read": [
    "Czas na czytanie",
    [
@@ -748,6 +750,7 @@ window.I18N = {
     ]
    ]
   ],
+  "tpl_read_alt": "Lies ein Kapitel deines Buches",
   "tpl_read": [
    "Lesezeit",
    [
@@ -1001,6 +1004,7 @@ window.I18N = {
     ]
    ]
   ],
+  "tpl_read_alt": "Lee un capítulo de tu libro",
   "tpl_read": [
    "Hora de leer",
    [
@@ -1254,6 +1258,7 @@ window.I18N = {
     ]
    ]
   ],
+  "tpl_read_alt": "Lis un chapitre de ton livre",
   "tpl_read": [
    "Moment lecture",
    [
@@ -1507,6 +1512,7 @@ window.I18N = {
     ]
    ]
   ],
+  "tpl_read_alt": "读一章你的书",
   "tpl_read": [
    "阅读时间",
    [
@@ -1760,6 +1766,7 @@ window.I18N = {
     ]
    ]
   ],
+  "tpl_read_alt": "Прочитай розділ своєї книжки",
   "tpl_read": [
    "Час читання",
    [

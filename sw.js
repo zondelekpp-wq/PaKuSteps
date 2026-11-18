@@ -1,9 +1,9 @@
 /* PaKuSteps service worker – caches the whole app so it works fully offline.
    When you change any file, bump VERSION so users get the update. */
-const VERSION = '1.1.1';
+const VERSION = '1.2.0';
 const CACHE = 'pakusteps-' + VERSION;
 const ASSETS = [
-  './', './index.html', './app.js', './i18n.js', './manifest.webmanifest',
+  './', './index.html', './app.js', './i18n.js', './family.js', './manifest.webmanifest',
   './icon.svg', './icon-192.png', './icon-512.png', './icon-maskable-512.png', './apple-touch-icon.png', './qr.svg'
 ];
 
@@ -31,7 +31,8 @@ self.addEventListener('message', e => { if (e.data === 'SKIP_WAITING') self.skip
 
 self.addEventListener('fetch', e => {
   const req = e.request;
-  if (req.method !== 'GET' || new URL(req.url).origin !== self.location.origin) return;
+  // only this app's own files – other PaKu apps on the same address look after their own
+  if (req.method !== 'GET' || !req.url.startsWith(self.registration.scope)) return;
   if (req.mode === 'navigate') {
     e.respondWith(caches.match('./index.html').then(r => r || fetch(req)));
     e.waitUntil(ensureCached());   // self-repair: re-download anything another app on this address may have removed

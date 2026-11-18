@@ -1,8 +1,12 @@
 /* PaKuSteps – one small step at a time. Offline; all data stays on the device. */
 'use strict';
 (() => {
-  const APP_VERSION = '1.1.1';
+  const APP_VERSION = '1.2.0';
   const LINKS = { paku: 'https://zondelekpp-wq.github.io/PaKu/' };       // apps a step can open (reading routine → PaKu)
+  /* PaKu family: this app works alone; shortcuts to other family apps appear only when they are used here (or switched on) */
+  const F = window.PaKuFamily || null;
+  const SELF = 'steps';
+  const LINKS_TO = ['paku', 'grounding'];                                // apps this app has shortcuts to
   const APP_URL = 'https://zondelekpp-wq.github.io/PaKuSteps/';          // the QR code in qr.svg points here
   const GROUNDING_URL = 'https://zondelekpp-wq.github.io/PaKuGrounding/?sos=1';
   const CONTACT_EMAIL = 'zondelek.p.p@gmail.com';                       // shown in Terms & privacy
@@ -21,7 +25,7 @@
     lang: 'en', theme: mq('(prefers-color-scheme: dark)') ? 'night' : 'calm', textSize: 'normal',
     reduceMotion: mq('(prefers-reduced-motion: reduce)'), accent: DEFAULT_ACCENT,
     vibrate: true, cheerSound: false, focusSound: false, timerDefault: 0, splash: false,
-    tasks: [], log: {}, tipDismissed: false, offlineToastShown: false
+    tasks: [], log: {}, tipDismissed: false, offlineToastShown: false, family: {}
   });
   const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
   const str = (v, n) => (typeof v === 'string' ? v.slice(0, n) : '');
@@ -38,6 +42,8 @@
           steps: (Array.isArray(x.steps) ? x.steps : []).filter(s => s && typeof s.text === 'string').slice(0, 100)
             .map(s => Object.assign({ id: str(s.id, 40) || uid(), text: s.text.slice(0, 200), done: s.done === true }, LINKS[s.link] ? { link: s.link } : {}))
         }));
+      } else if (k === 'family') {
+        if (v && typeof v === 'object') for (const id of Object.keys(v)) if (typeof v[id] === 'boolean' && /^[\w-]{1,30}$/.test(id)) d.family[id] = v[id];
       } else if (k === 'log') {
         if (v && typeof v === 'object') for (const day of Object.keys(v)) {
           const e = v[day];
@@ -56,6 +62,9 @@
   function load() { try { return normalize(JSON.parse(localStorage.getItem(KEY) || 'null')); } catch (e) { return DEFAULTS(); } }
   function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) { } }
   let S = load();
+  /* is another family app "connected" here? user's own choice wins, otherwise: has it been used on this device */
+  const connected = id => (id in S.family ? S.family[id] : !!(F && F.used(id)));
+  const ft = k => (F ? F.t(k, S.lang) : k);
 
   /* ---------- helpers ---------- */
   function t(k, v) {
@@ -112,6 +121,7 @@
     coffee: sv('<path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M17 10h1.5a2.5 2.5 0 0 1 0 5H17M8 3v3M12 3v3"/>'),
     upload: sv('<path d="M12 16V4M7 9l5-5 5 5M5 20h14"/>'),
     download: sv('<path d="M12 4v12M7 11l5 5 5-5M5 20h14"/>'),
+    leaf: sv('<polygon stroke-width="1.6" points="12.0,2.0 13.8,5.8 16.2,4.6 15.4,9.8 19.0,6.6 19.8,8.6 22.6,8.0 21.0,11.8 22.4,12.6 17.0,16.2 17.8,18.6 13.0,17.6 13.0,22.0 11.0,22.0 11.0,17.6 6.2,18.6 7.0,16.2 1.6,12.6 3.0,11.8 1.4,8.0 4.2,8.6 5.0,6.6 8.6,9.8 7.8,4.6 10.2,5.8"/>'),
     book: sv('<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 21V5M8 7h7"/>'),
     repeat: sv('<path d="M4 11V9a4 4 0 0 1 4-4h11M15 1l4 4-4 4M20 13v2a4 4 0 0 1-4 4H5M9 23l-4-4 4-4"/>')
   };
@@ -372,6 +382,7 @@
           </li>`;
         }).join('')}</ul>` : `<p class="muted empty">${te('no_tasks')}</p>`}
         <button class="tile wide" data-go="why"><span class="tile-ic">${ICON.info}</span><span><span class="tile-t">${te('why_link')}</span><span class="tile-d">${te('why_link_d')}</span></span></button>
+        ${F ? `<button class="tile wide" data-go="family"><span class="tile-ic">${ICON.leaf}</span><span><span class="tile-t">${esc(ft('fam_title'))}</span><span class="tile-d">${esc(ft('fam_d'))}</span></span></button>` : ''}
       `, true);
     },
 
@@ -379,7 +390,8 @@
       const base = (Array.isArray(t('tpl')) ? t('tpl') : window.I18N.en.tpl).map(([title, steps]) => ({ title, steps, routine: false }));
       const rd = Array.isArray(t('tpl_read')) ? t('tpl_read') : window.I18N.en.tpl_read;
       // reading routine: repeats every time, and its last step opens PaKu
-      const list = [{ title: rd[0], steps: rd[1], routine: true, link: [rd[1].length - 1, 'paku'] }, ...base];
+      const rdSteps = connected('paku') ? rd[1] : rd[1].slice(0, -1).concat(t('tpl_read_alt'));   // without PaKu: just "read a chapter"
+      const list = [{ title: rd[0], steps: rdSteps, routine: true, link: [rdSteps.length - 1, 'paku'] }, ...base];
       app.innerHTML = frame(t('templates'), `<ul class="list">${list.map((tp, i) => `
         <li><button class="card tpl" data-i="${i}"><span class="task-name">${tp.routine ? `<span class="rt">${ICON.repeat}</span>` : ''}${esc(tp.title)}</span>
         <span class="muted small">${tp.routine ? te('routine') + ' · ' : ''}${te('tpl_steps', { n: tp.steps.length })}</span>
@@ -508,13 +520,14 @@
         if (i < 0) return finish();
         const n = tk.steps.length, d = doneCount(tk), cur = tk.steps[i];
         // a step that links to another app (e.g. reading → PaKu) opens it by itself, right after the tap that led here
-        if (cur.link && LINKS[cur.link] && byTap && !opened.has(cur.id)) openLink(cur);
+        const hasLink = !!(cur.link && LINKS[cur.link] && connected(cur.link));
+        if (hasLink && byTap && !opened.has(cur.id)) openLink(cur);
         dz.innerHTML = `
           <p class="sos-progress">${te('step_of', { a: d + 1, b: n })}</p>
           <div class="pdots" aria-hidden="true">${tk.steps.map(s => `<span class="${s.done ? 'on' : ''}"></span>`).join('')}</div>
           ${cheer ? `<p class="cheer" role="status">${ICON.checkCircle}<span>${esc(cheer)}</span></p>` : ''}
           <div class="card step-card"><p id="st">${esc(tk.steps[i].text)}</p>
-            ${cur.link && LINKS[cur.link] ? `<div class="link-step"><a class="btn primary" id="ol" href="${LINKS[cur.link]}" target="_blank" rel="noopener">${ICON.book}<span>${te('open_paku')}</span></a><p class="hint">${te('paku_hint')}</p></div>` : ''}</div>
+            ${hasLink ? `<div class="link-step"><a class="btn primary" id="ol" href="${LINKS[cur.link]}" target="_blank" rel="noopener">${ICON.book}<span>${te('open_paku')}</span></a><p class="hint">${te('paku_hint')}</p></div>` : ''}</div>
           <button class="btn primary big-btn wide done-btn" id="dn">${ICON.check}<span>${te('step_done')}</span></button>
           <div class="row center-row">
             <button class="btn" id="sp">${ICON.split}<span>${te('split')}</span></button>
@@ -576,7 +589,7 @@
             <button class="btn wide" data-o="split">${ICON.split}<span>${te('stuck_split')}</span></button>
             <button class="btn wide" data-o="2">${ICON.timer}<span>${te('stuck_2min')}</span></button>
             <button class="btn wide" data-o="break">${ICON.mountain}<span>${te('stuck_break')}</span></button>
-            <a class="btn wide ghost" href="${GROUNDING_URL}" target="_blank" rel="noopener">${ICON.anchor}<span>${te('stuck_ground')}</span></a>
+            ${connected('grounding') ? `<a class="btn wide ghost" href="${GROUNDING_URL}" target="_blank" rel="noopener">${ICON.anchor}<span>${te('stuck_ground')}</span></a>` : ''}
             <button class="btn ghost" data-o="close">${te('close')}</button>
           </div>`,
           (el, close) => el.addEventListener('click', e => {
@@ -682,6 +695,7 @@
           <div class="stack">
             <a class="btn coffee" href="${BMC_URL}" target="_blank" rel="noopener noreferrer">${ICON.coffee}<span>${te('bmc')}</span></a>
             <button class="btn ghost" data-go="why">${ICON.info}<span>${te('why_link')}</span></button>
+            ${F ? `<button class="btn ghost" data-go="family">${ICON.leaf}<span>${esc(ft('fam_title'))}</span></button>` : ''}
             <button class="btn ghost" data-go="terms">${te('terms_title')}</button>
           </div>
           <p class="muted center small">PaKuSteps · ${te('version', { v: APP_VERSION })}</p></section>`);
@@ -721,6 +735,31 @@
       const parts = [['why_h_for', 'why_for'], ['why_h_works', 'why_works'], ['why_h_helps', 'why_helps'], ['why_h_tips', 'why_tips'], ['why_h_limits', 'why_limits']];
       app.innerHTML = frame(t('why_link'), parts.map(([h, p]) => `<section class="card why"><h2>${te(h)}</h2><p>${te(p)}</p></section>`).join('') +
         `<div class="center"><button class="btn primary big-btn" data-go="edit">${ICON.plus}<span>${te('new_task')}</span></button></div>`);
+    },
+
+    family() {
+      if (!F) { replace('home', {}); return; }
+      const paint = () => {
+        app.innerHTML = frame(ft('fam_title'), `<p class="muted">${esc(ft('fam_d'))}</p>
+          <ul class="list fam">${F.all().map(a => {
+            const me = a.id === SELF, used = me || F.used(a.id);
+            return `<li class="card fam-app${me ? ' me' : ''}">
+              <div class="fam-head"><img class="fam-ic" src="${esc(F.icon(a))}" alt="" width="48" height="48" onerror="this.style.visibility='hidden'">
+                <span class="grow"><strong>${esc(a.name)}</strong><small class="muted">${esc(F.desc(a, S.lang))}</small>
+                ${me ? `<small class="fam-tag">${esc(ft('fam_this'))}</small>` : used ? `<small class="fam-tag">${ICON.check}${esc(ft('fam_used'))}</small>` : ''}</span>
+                ${me ? '' : `<a class="btn small${used ? ' primary' : ''}" href="${esc(F.url(a))}" target="_blank" rel="noopener">${esc(ft(used ? 'fam_open' : 'fam_get'))}</a>`}</div>
+              ${!me && LINKS_TO.includes(a.id) ? `<label class="toggle"><span class="grow"><span>${esc(ft('fam_link'))}</span><small class="muted">${esc(ft('fam_link_d'))}</small></span>
+                <input type="checkbox" data-fam="${esc(a.id)}" ${connected(a.id) ? 'checked' : ''}><span class="sw" aria-hidden="true"></span></label>` : ''}
+            </li>`;
+          }).join('')}</ul>
+          <a class="btn wide" href="${esc(F.hub)}" target="_blank" rel="noopener">${ICON.leaf}<span>${esc(ft('fam_hub'))}</span></a>`);
+        $('#main').addEventListener('change', e => {
+          const c = e.target.closest('[data-fam]'); if (!c) return;
+          S.family[c.dataset.fam] = c.checked; save();
+        });
+      };
+      paint();
+      F.detect().then(() => { if (current.screen === 'family') paint(); });
     },
 
     terms() {
@@ -796,4 +835,5 @@
   if (startNew) show('edit');
   else if (S.splash) splash();
   setupSW();
+  if (F) F.detect().then(() => F.refresh());
 })();
