@@ -1,7 +1,7 @@
 # PaKuSteps
 
 Aplikacja PWA z rodziny PaKu: dzieli zadania na małe kroki i pokazuje jeden krok naraz. Działa w pełni offline.
-Języki: EN (domyślny), PL, DE, ES, FR, ZH, UK.
+Języki: EN (domyślny), PL, DE, ES, FR, ZH, UK, LV.
 
 ## Pliki (wszystkie w jednym folderze, bez podfolderów)
 - `index.html` – układ i style

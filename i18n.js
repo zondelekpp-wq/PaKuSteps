@@ -248,11 +248,11 @@ window.I18N = {
    [
     "Make yourself comfortable with something to drink",
     "Silence notifications on your phone",
-    "Read today's chapter in PaKu"
+    "Read today's chapter in PaKuReading"
    ]
   ],
-  "open_paku": "Open PaKu",
-  "paku_hint": "PaKu opens in a new window. When you finish, come back here and tap Done."
+  "open_paku": "Open PaKuReading",
+  "paku_hint": "PaKuReading opens in a new window. When you finish, come back here and tap Done."
  },
  "pl": {
   "settings": "Ustawienia",
@@ -502,11 +502,11 @@ window.I18N = {
    [
     "Usiądź wygodnie i przygotuj coś do picia",
     "Wycisz powiadomienia w telefonie",
-    "Przeczytaj dzisiejszy rozdział w PaKu"
+    "Przeczytaj dzisiejszy rozdział w PaKuReading"
    ]
   ],
-  "open_paku": "Otwórz PaKu",
-  "paku_hint": "PaKu otworzy się w nowym oknie. Gdy skończysz, wróć tutaj i stuknij „Zrobione”."
+  "open_paku": "Otwórz PaKuReading",
+  "paku_hint": "PaKuReading otworzy się w nowym oknie. Gdy skończysz, wróć tutaj i stuknij „Zrobione”."
  },
  "de": {
   "settings": "Einstellungen",
@@ -756,11 +756,11 @@ window.I18N = {
    [
     "Mach es dir mit etwas zu trinken gemütlich",
     "Schalte die Benachrichtigungen am Handy stumm",
-    "Lies das heutige Kapitel in PaKu"
+    "Lies das heutige Kapitel in PaKuReading"
    ]
   ],
-  "open_paku": "PaKu öffnen",
-  "paku_hint": "PaKu öffnet sich in einem neuen Fenster. Wenn du fertig bist, komm hierher zurück und tippe auf „Erledigt“."
+  "open_paku": "PaKuReading öffnen",
+  "paku_hint": "PaKuReading öffnet sich in einem neuen Fenster. Wenn du fertig bist, komm hierher zurück und tippe auf „Erledigt“."
  },
  "es": {
   "settings": "Ajustes",
@@ -1010,11 +1010,11 @@ window.I18N = {
    [
     "Acomódate con algo de beber",
     "Silencia las notificaciones del móvil",
-    "Lee el capítulo de hoy en PaKu"
+    "Lee el capítulo de hoy en PaKuReading"
    ]
   ],
-  "open_paku": "Abrir PaKu",
-  "paku_hint": "PaKu se abre en una ventana nueva. Cuando termines, vuelve aquí y toca «Hecho»."
+  "open_paku": "Abrir PaKuReading",
+  "paku_hint": "PaKuReading se abre en una ventana nueva. Cuando termines, vuelve aquí y toca «Hecho»."
  },
  "fr": {
   "settings": "Réglages",
@@ -1264,11 +1264,11 @@ window.I18N = {
    [
     "Installe-toi confortablement avec quelque chose à boire",
     "Coupe les notifications de ton téléphone",
-    "Lis le chapitre du jour dans PaKu"
+    "Lis le chapitre du jour dans PaKuReading"
    ]
   ],
-  "open_paku": "Ouvrir PaKu",
-  "paku_hint": "PaKu s'ouvre dans une nouvelle fenêtre. Quand tu as fini, reviens ici et touche « Fait »."
+  "open_paku": "Ouvrir PaKuReading",
+  "paku_hint": "PaKuReading s'ouvre dans une nouvelle fenêtre. Quand tu as fini, reviens ici et touche « Fait »."
  },
  "zh": {
   "settings": "设置",
@@ -1518,11 +1518,11 @@ window.I18N = {
    [
     "找个舒服的地方，准备一杯喝的",
     "把手机通知调成静音",
-    "在 PaKu 里读今天的章节"
+    "在 PaKuReading 里读今天的章节"
    ]
   ],
-  "open_paku": "打开 PaKu",
-  "paku_hint": "PaKu 会在新窗口中打开。读完后回到这里，点“完成”。"
+  "open_paku": "打开 PaKuReading",
+  "paku_hint": "PaKuReading 会在新窗口中打开。读完后回到这里，点“完成”。"
  },
  "uk": {
   "settings": "Налаштування",
@@ -1772,10 +1772,264 @@ window.I18N = {
    [
     "Влаштуйся зручно й візьми щось попити",
     "Вимкни сповіщення на телефоні",
-    "Прочитай сьогоднішній розділ у PaKu"
+    "Прочитай сьогоднішній розділ у PaKuReading"
    ]
   ],
-  "open_paku": "Відкрити PaKu",
-  "paku_hint": "PaKu відкриється в новому вікні. Коли закінчиш, повернися сюди й торкнися «Зроблено»."
- }
+  "open_paku": "Відкрити PaKuReading",
+  "paku_hint": "PaKuReading відкриється в новому вікні. Коли закінчиш, повернися сюди й торкнися «Зроблено»."
+ },
+  lv: {
+    "settings": "Iestatījumi",
+    "back": "Atpakaļ",
+    "next": "Tālāk",
+    "skip": "Izlaist",
+    "done": "Gatavs",
+    "start": "Sākt",
+    "stop": "Apturēt",
+    "pause": "Pauze",
+    "resume": "Turpināt",
+    "cancel": "Atcelt",
+    "save": "Saglabāt",
+    "delete": "Dzēst",
+    "close": "Aizvērt",
+    "got_it": "Skaidrs",
+    "language": "Valoda",
+    "min": "{n} min",
+    "set_look": "Izskats",
+    "theme_calm": "Mierīgs (gaišs)",
+    "theme_night": "Nakts (tumšs)",
+    "theme_contrast": "Augsts kontrasts",
+    "set_text": "Teksta izmērs",
+    "size_normal": "Parasts",
+    "size_large": "Liels",
+    "size_xl": "Ļoti liels",
+    "set_motion": "Mazāk kustību",
+    "set_data": "Tavi dati",
+    "set_data_d": "Viss paliek šajā ierīcē. Bez konta, bez izsekošanas, bez interneta.",
+    "set_export": "Saglabāt rezerves kopiju",
+    "set_import": "Atjaunot no rezerves kopijas",
+    "set_import_ok": "Rezerves kopija atjaunota.",
+    "set_import_bad": "Šo failu nevarēja nolasīt.",
+    "set_wipe": "Dzēst visus datus",
+    "set_about": "Par lietotni",
+    "bmc": "Uzsauc man kafiju",
+    "terms_title": "Noteikumi un privātums",
+    "install": "Instalēt lietotni",
+    "install_ios": "iPhone vai iPad: pieskaries “Kopīgot”, tad “Pievienot sākuma ekrānam”.",
+    "offline_ready": "Gatava darbam bezsaistē.",
+    "update_ready": "Pieejama jauna versija.",
+    "reload": "Atjaunināt",
+    "version": "Versija {v}",
+    "terms_3": "Visus datus vari jebkurā laikā izdzēst Iestatījumos. Tos izdzēš arī lietotnes atinstalēšana vai pārlūka datu notīrīšana.",
+    "terms_4": "Kafijas saite atver ārējo vietni Buy Me a Coffee, kurai ir sava privātuma politika.",
+    "terms_5": "© 2026 Piotr Żondełek. Visas tiesības aizsargātas. Lietotni vai tās daļas bez rakstiskas atļaujas kopēt, mainīt vai izplatīt nav atļauts.",
+    "terms_contact": "Kontakti: {email}",
+    "share_title": "Kopīgot lietotni",
+    "share_btn": "Kopīgot saiti",
+    "copy_btn": "Kopēt saiti",
+    "copied": "Saite nokopēta.",
+    "set_color": "Krāsa",
+    "set_color_d": "Izvēlies krāsu, kas tev šķiet mierīga. Augsta kontrasta režīmam ir savas krāsas.",
+    "col_lavender": "Lavanda",
+    "col_blue": "Zila",
+    "col_teal": "Jūras zaļa",
+    "col_green": "Zaļa",
+    "col_rose": "Rozā",
+    "col_amber": "Dzintara",
+    "col_grey": "Pelēka",
+    "col_custom": "Tava krāsa",
+    "why_link": "Kāpēc un kā tas palīdz",
+    "why_h_for": "Kam tā ir domāta",
+    "why_h_works": "Kāpēc tas darbojas",
+    "why_h_helps": "Kā tas palīdz",
+    "why_h_tips": "Padomi",
+    "why_h_limits": "Kas tā nav",
+    "mark_done": "Gatavs",
+    "step_of": "Solis {a} no {b}",
+    "step_done": "Gatavs",
+    "about_text": "PaKuSteps ir bezmaksas un tāda arī paliks. Ja tā tev palīdz, vari atbalstīt tās tapšanu ar brīvprātīgu kafiju.",
+    "share_d": "Noskenē QR kodu ar tālruņa kameru, lai atvērtu un instalētu PaKuSteps.",
+    "tagline": "Pa vienam mazam solim.",
+    "my_tasks": "Mani uzdevumi",
+    "new_task": "Jauns uzdevums",
+    "from_template": "Sākt no veidnes",
+    "templates": "Veidnes",
+    "tpl_steps": "Soļi: {n}",
+    "no_tasks": "Vēl nav uzdevumu. Pievieno kaut ko mazu, ko gribi izdarīt, – vai sāc no veidnes.",
+    "task_name": "Uzdevuma nosaukums",
+    "task_name_ph": "piem., Sakārtot rakstāmgaldu",
+    "untitled": "Uzdevums bez nosaukuma",
+    "steps_title": "Soļi",
+    "step_ph": "Nākamais mazais solis…",
+    "add_step": "Pievienot soli",
+    "steps_hint": "Padari katru soli tik mazu, lai tas šķistu gandrīz par vieglu.",
+    "no_steps": "Pievieno vismaz vienu soli.",
+    "routine": "Rutīna",
+    "routine_d": "Pēc pabeigšanas sākas no jauna – der ikdienas lietām.",
+    "continue_task": "Turpināt",
+    "edit": "Rediģēt",
+    "progress": "{a} no {b} soļiem",
+    "delete_task": "Dzēst uzdevumu",
+    "delete_task_confirm": "Dzēst šo uzdevumu?",
+    "reset_task": "Sākt no jauna",
+    "move_up": "Pārvietot augšup",
+    "move_down": "Pārvietot lejup",
+    "split": "Par lielu? Sadali",
+    "split_title": "Sadali šo soli",
+    "split_hint": "Uzraksti mazītiņu šī soļa pirmo daļu. Tā būs pirmā.",
+    "split_ph": "Mazāks pirmais solis…",
+    "later": "Vēlāk",
+    "stuck": "Esmu iestrēdzis",
+    "stuck_title": "Tas nekas. Kas tagad palīdzētu?",
+    "stuck_split": "Padarīt šo soli mazāku",
+    "stuck_2min": "Darīt to tikai 2 minūtes",
+    "stuck_break": "Paņemt 1 minūtes pauzi",
+    "stuck_ground": "Visa ir par daudz – atvērt PaKuGrounding",
+    "break_text": "Elpo lēnām. Vienu minūti nekas cits nav jādara.",
+    "timer": "Taimeris",
+    "timer_off": "Bez taimera",
+    "timer_up": "Laiks beidzies. Gatavs – vai vēl viens aplis?",
+    "cheer1": "Gatavs. Pa vienam solim.",
+    "cheer2": "Lieliski – tas skaitās.",
+    "cheer3": "Vēl viens solis aiz muguras.",
+    "cheer4": "Labi. Turpini saudzīgi.",
+    "task_done_title": "Uzdevums izpildīts!",
+    "task_done_text": "Tu pabeidzi “{name}”. Veltī brīdi, lai to pamanītu.",
+    "routine_reset": "Šī rutīna ir gatava nākamajai reizei.",
+    "back_to_tasks": "Atpakaļ uz maniem uzdevumiem",
+    "climbed": "+{h} tavā kāpienā",
+    "focus_on": "Fokusa skaņa: ieslēgta",
+    "focus_off": "Fokusa skaņa: izslēgta",
+    "climb_title": "Mans kāpiens",
+    "climb_d": "Katrs pabeigts solis tevi paceļ par 10 metriem. Bez sēriju skaitīšanas, bez spiediena – skaitās viss, lai kad tas notiktu.",
+    "climb_now": "Tavs augstums",
+    "st_week": "Šonedēļ",
+    "st_month": "Šomēnes",
+    "st_year": "Šogad",
+    "st_all": "Kopā",
+    "steps_n": "Soļi",
+    "tasks_n": "Uzdevumi",
+    "height": "Augstums",
+    "reached": "Sasniegts: {m}",
+    "next_goal": "Nākamais: {m} – vēl {left}",
+    "ms_start": "starts",
+    "ms_eiffel": "Eifeļa tornis",
+    "ms_burj": "Burdž Halifa",
+    "ms_blanc": "Monblāns",
+    "ms_kili": "Kilimandžaro",
+    "ms_everest": "Everests",
+    "ms_space": "Kosmosa robeža",
+    "ms_iss": "Starptautiskā kosmosa stacija",
+    "ms_moon": "Mēness",
+    "milestones": "Atskaites punkti",
+    "tap_skip": "Pieskaries, lai izlaistu",
+    "set_splash": "Rādīt manu kāpienu, atverot lietotni",
+    "set_splash_d": "4 sekundes – pieskaries, lai izlaistu.",
+    "set_doing": "Uzdevumu pildīšana",
+    "set_cheer": "Maiga skaņa, kad solis padarīts",
+    "set_vibe": "Vibrēt, kad solis padarīts",
+    "set_timer_default": "Noklusējuma soļa taimeris",
+    "set_motion_d": "Mazāk animāciju; svinības bez kustībām.",
+    "set_wipe_confirm": "Dzēst no šīs ierīces visus uzdevumus, iestatījumus un kāpiena vēsturi? To nevar atsaukt.",
+    "tip_first": "Padoms: sāc ar veidni vai pievieno uzdevumu saviem vārdiem. Iestatījumos vari mainīt krāsas, teksta izmēru un valodu.",
+    "share_text": "PaKuSteps – bezmaksas bezsaistes lietotne lietu darīšanai soli pa solim",
+    "why_link_d": "Kam lietotne ir domāta un kāpēc mazi soļi darbojas",
+    "why_for": "PaKuSteps ir domāta ikvienam, kam grūti iesākt vai pabeigt lietas – īpaši cilvēkiem ar UDHS, autiskiem cilvēkiem un tiem, kuri dzīvo ar PTSS, depresiju vai hronisku nogurumu, kad vienkāršs uzdevums var šķist kā siena. Tā palīdz arī vecākiem un aprūpētājiem, kuri sadala uzdevumus kādam citam. Lietotne ir arī neirotipiskiem cilvēkiem – ikvienam var būt diena, kad pat mazas lietas šķiet par lielām: stress, slimība, sēras vai vienkārši pārāk daudz uzreiz. Tādā dienā pietiek ar vienu mazu soli. Lai to lietotu, diagnoze nav vajadzīga.",
+    "why_works": "Iesākšana, plānošana un pārslēgšanās starp uzdevumiem balstās uz tā sauktajām izpildfunkcijām, kas var darboties citādi vai stresā ātrāk izsīkt. Liels uzdevums ir neskaidrs, tāpēc smadzenes nezina, ar ko sākt, un apstājas. Sadalot to ļoti mazos, konkrētos soļos, šī neskaidrība pazūd. Redzot tikai vienu soli vienlaikus, mazinās pārslodze un lēmumu skaits. Katra soļa pabeigšana dod nelielu panākuma sajūtu, kas atvieglo nākamo. Redzams taimeris palīdz, kad laiku ir grūti sajust, un triks “tikai divas minūtes” pazemina slieksni, lai sāktu. Tās ir izplatītas stratēģijas UDHS koučingā un kognitīvi biheiviorālajās pieejās.",
+    "why_helps": "Gatavas veidnes ikdienas uzdevumiem, soļi, kurus jebkurā brīdī var sadalīt vēl sīkāk, viens solis ekrānā vienlaikus, neobligāts vizuāls taimeris un fokusa skaņa, kā arī saudzīgs progresa pieraksts – bez sērijām, sarkanām zīmītēm un salīdzināšanas. Ja visa kļūst par daudz, lietotne aizved uz iezemēšanos. Viss darbojas bezsaistē un paliek tavā ierīcē.",
+    "why_tips": "Padari pirmo soli smieklīgi mazu – “atvērt klēpjdatoru” ir pilnīgi labs solis. Ja solis nekustas, sadali to, nevis spied stiprāk. Atlikt soli uz vēlāku ir atļauts. Rutīnas (piemēram, sagatavošanos no rīta) var atkārtot katru dienu.",
+    "why_limits": "PaKuSteps ir pašpalīdzības rīks. Tā nediagnosticē un neārstē un neaizstāj profesionālu atbalstu. Ja pamani, ka ikdienu jau ilgi ir grūti pārvaldīt, aprunājies ar ārstu vai terapeitu.",
+    "terms_1": "PaKuSteps ir bezmaksas pašpalīdzības rīks uzdevumu sadalīšanai mazos soļos. Tā nav medicīniska ierīce un neaizstāj profesionālu palīdzību.",
+    "terms_2": "Lietotne darbojas bezsaistē. Viss, ko ievadi – uzdevumi, soļi, iestatījumi un progresa vēsture –, glabājas tikai tavā ierīcē. Nekas netiek sūtīts ne mums, ne kādam citam. Nav kontu, reklāmu vai analītikas.",
+    "tpl": [
+      [
+        "Sakārtot virtuvi",
+        [
+          "Aiznes vienu krūzi vai šķīvi uz izlietni",
+          "Noliec vietā 5 lietas, kurām šeit nav vietas",
+          "Piepildi izlietni vai atver trauku mazgājamo mašīnu",
+          "Nomazgā vai ieliec 5 lietas",
+          "Noslauki virsmu pie izlietnes",
+          "Iznes atkritumus",
+          "Paskaties apkārt – šodienai pietiek"
+        ]
+      ],
+      [
+        "Iet dušā",
+        [
+          "Aiznes dvieli un tīras drēbes uz vannas istabu",
+          "Izģērbies",
+          "Ieslēdz ūdeni un pārbaudi temperatūru",
+          "Nomazgā ķermeni",
+          "Nomazgā matus – vai šodien izlaid",
+          "Noslaukies un apģērbies"
+        ]
+      ],
+      [
+        "Iziet no mājas",
+        [
+          "Pārbaudi, cikos jāiziet",
+          "Apģērbies atbilstoši laikapstākļiem",
+          "Atslēgas, tālrunis, maciņš",
+          "Ūdens un viss pārējais, kas vajadzīgs",
+          "Apavi un jaka",
+          "Aizslēdz durvis"
+        ]
+      ],
+      [
+        "Sākt darbu vai mācības",
+        [
+          "Atver vajadzīgo failu vai grāmatu",
+          "Uzraksti vienu teikumu par to, kā izskatās “gatavs”",
+          "Aizver citas cilnes un lietotnes",
+          "Iestati taimeri uz 10 minūtēm",
+          "Izdari pašu pirmo mazo daļu",
+          "Pieraksti, kur apstājies"
+        ]
+      ],
+      [
+        "Izmazgāt veļu",
+        [
+          "Aiznes veļu pie mašīnas",
+          "Sašķiro gaišajā un tumšajā",
+          "Ieliec veļu mašīnā un pievieno mazgāšanas līdzekli",
+          "Ieslēdz mazgāšanu",
+          "Izkar vai izžāvē veļu",
+          "Noliec tīrās drēbes vietā"
+        ]
+      ],
+      [
+        "Sagatavoties gulēt",
+        [
+          "Pieslēdz tālruni lādētājam",
+          "Iztīri zobus",
+          "Nomazgā seju",
+          "Pārģērbies naktsdrēbēs",
+          "Paņem glāzi ūdens",
+          "Gaismas izslēgtas – laiks atpūsties"
+        ]
+      ],
+      [
+        "Atbildēt uz ziņu",
+        [
+          "Atver ziņu",
+          "Izlasi to vienreiz, vēl neatbildot",
+          "Uzraksti vienu teikumu – tam nav jābūt ideālam",
+          "Pievieno to, kas trūkst",
+          "Nosūti"
+        ]
+      ]
+    ],
+    "tpl_read_alt": "Izlasi nodaļu no savas grāmatas",
+    "tpl_read": [
+      "Lasīšanas laiks",
+      [
+        "Iekārtojies ērti ar kaut ko dzeramu",
+        "Izslēdz paziņojumus tālrunī",
+        "Izlasi šodienas nodaļu lietotnē PaKuReading"
+      ]
+    ],
+    "open_paku": "Atvērt PaKuReading",
+    "paku_hint": "PaKuReading atveras jaunā logā. Kad pabeidz, atgriezies šeit un pieskaries “Gatavs”."
+  }
 };

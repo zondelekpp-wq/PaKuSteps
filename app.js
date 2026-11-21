@@ -1,8 +1,8 @@
 /* PaKuSteps – one small step at a time. Offline; all data stays on the device. */
 'use strict';
 (() => {
-  const APP_VERSION = '1.2.0';
-  const LINKS = { paku: 'https://zondelekpp-wq.github.io/PaKu/' };       // apps a step can open (reading routine → PaKu)
+  const APP_VERSION = '1.3.0';
+  const LINKS = { paku: 'https://zondelekpp-wq.github.io/PaKu/' };       // apps a step can open (reading routine → PaKuReading; its address stays /PaKu/)
   /* PaKu family: this app works alone; shortcuts to other family apps appear only when they are used here (or switched on) */
   const F = window.PaKuFamily || null;
   const SELF = 'steps';
@@ -11,8 +11,8 @@
   const GROUNDING_URL = 'https://zondelekpp-wq.github.io/PaKuGrounding/?sos=1';
   const CONTACT_EMAIL = 'zondelek.p.p@gmail.com';                       // shown in Terms & privacy
   const BMC_URL = 'https://buymeacoffee.com/Hieronim';
-  const LANGS = [['en', 'English'], ['pl', 'Polski'], ['de', 'Deutsch'], ['es', 'Español'], ['fr', 'Français'], ['zh', '中文'], ['uk', 'Українська']];
-  const LOCALES = { en: 'en-GB', pl: 'pl-PL', de: 'de-DE', es: 'es-ES', fr: 'fr-FR', zh: 'zh-CN', uk: 'uk-UA' };
+  const LANGS = [['en', 'English'], ['pl', 'Polski'], ['de', 'Deutsch'], ['es', 'Español'], ['fr', 'Français'], ['zh', '中文'], ['uk', 'Українська'], ['lv', 'Latviešu']];
+  const LOCALES = { en: 'en-GB', pl: 'pl-PL', de: 'de-DE', es: 'es-ES', fr: 'fr-FR', zh: 'zh-CN', uk: 'uk-UA', lv: 'lv-LV' };
   const KEY = 'pakusteps.v1';
   const DEFAULT_ACCENT = '#7a5ca8';
   const ACCENTS = [['lavender', '#7a5ca8'], ['blue', '#3f6fb5'], ['teal', '#2f8a85'], ['green', '#4f8a4f'], ['rose', '#b0507a'], ['amber', '#b5762a'], ['grey', '#646a78']];
