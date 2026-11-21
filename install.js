@@ -4,19 +4,20 @@
    iPhone/iPad and other browsers: the button shows how to add the app to the home screen. */
 (() => {
   const T = {
-    en: ['Install the app', 'Works offline, like a regular app.', 'Install', 'Tap Share ⬆️ at the bottom of Safari, then “Add to Home Screen”.', 'Open the browser menu ⋮ and choose “Install app” or “Add to Home screen”.', 'Open this page in Chrome or Safari to install it (menu ⋯ → Open in browser).', 'Close'],
-    pl: ['Zainstaluj aplikację', 'Działa offline, jak zwykła aplikacja.', 'Zainstaluj', 'Stuknij „Udostępnij” ⬆️ na dole Safari, potem „Do ekranu początkowego”.', 'Otwórz menu przeglądarki ⋮ i wybierz „Zainstaluj aplikację” lub „Dodaj do ekranu głównego”.', 'Otwórz tę stronę w Chrome lub Safari, żeby ją zainstalować (menu ⋯ → Otwórz w przeglądarce).', 'Zamknij'],
-    de: ['App installieren', 'Funktioniert offline wie eine normale App.', 'Installieren', 'Tippe unten in Safari auf „Teilen“ ⬆️ und dann auf „Zum Home-Bildschirm“.', 'Öffne das Browsermenü ⋮ und wähle „App installieren“ oder „Zum Startbildschirm hinzufügen“.', 'Öffne diese Seite in Chrome oder Safari, um sie zu installieren (Menü ⋯ → Im Browser öffnen).', 'Schließen'],
-    es: ['Instala la app', 'Funciona sin conexión, como una app normal.', 'Instalar', 'Toca Compartir ⬆️ abajo en Safari y luego «Añadir a pantalla de inicio».', 'Abre el menú del navegador ⋮ y elige «Instalar aplicación» o «Añadir a pantalla de inicio».', 'Abre esta página en Chrome o Safari para instalarla (menú ⋯ → Abrir en el navegador).', 'Cerrar'],
-    fr: ['Installer l’app', 'Fonctionne hors ligne, comme une app normale.', 'Installer', 'Touchez Partager ⬆️ en bas de Safari, puis « Sur l’écran d’accueil ».', 'Ouvrez le menu du navigateur ⋮ et choisissez « Installer l’application » ou « Ajouter à l’écran d’accueil ».', 'Ouvrez cette page dans Chrome ou Safari pour l’installer (menu ⋯ → Ouvrir dans le navigateur).', 'Fermer'],
-    zh: ['安装应用', '可离线使用，就像普通应用一样。', '安装', '点击 Safari 底部的“分享”⬆️，然后选择“添加到主屏幕”。', '打开浏览器菜单 ⋮，选择“安装应用”或“添加到主屏幕”。', '请在 Chrome 或 Safari 中打开此页面进行安装（菜单 ⋯ → 在浏览器中打开）。', '关闭'],
-    uk: ['Встанови застосунок', 'Працює офлайн, як звичайний застосунок.', 'Встановити', 'Натисни «Поділитися» ⬆️ унизу Safari, потім «На початковий екран».', 'Відкрий меню браузера ⋮ і вибери «Установити застосунок» або «Додати на головний екран».', 'Відкрий цю сторінку в Chrome або Safari, щоб установити (меню ⋯ → Відкрити в браузері).', 'Закрити'],
-    lv: ['Instalē lietotni', 'Darbojas bezsaistē kā parasta lietotne.', 'Instalēt', 'Safari apakšā pieskaries “Kopīgot” ⬆️, tad “Pievienot sākuma ekrānam”.', 'Atver pārlūka izvēlni ⋮ un izvēlies “Instalēt lietotni” vai “Pievienot sākuma ekrānam”.', 'Atver šo lapu pārlūkā Chrome vai Safari, lai to instalētu (izvēlne ⋯ → Atvērt pārlūkā).', 'Aizvērt']
+    en: ['Install the app', 'Works offline, like a regular app.', 'Install', 'Tap Share ⬆️ at the bottom of Safari, then “Add to Home Screen”.', 'Open the browser menu ⋮ and choose “Install app” or “Add to Home screen”.', 'Open this page in Chrome or Safari to install it (menu ⋯ → Open in browser).', 'Close', 'On Samsung phones, install through Chrome – then Android won\'t show a warning.', 'Open in Chrome'],
+    pl: ['Zainstaluj aplikację', 'Działa offline, jak zwykła aplikacja.', 'Zainstaluj', 'Stuknij „Udostępnij” ⬆️ na dole Safari, potem „Do ekranu początkowego”.', 'Otwórz menu przeglądarki ⋮ i wybierz „Zainstaluj aplikację” lub „Dodaj do ekranu głównego”.', 'Otwórz tę stronę w Chrome lub Safari, żeby ją zainstalować (menu ⋯ → Otwórz w przeglądarce).', 'Zamknij', 'Na telefonach Samsung zainstaluj aplikację przez Chrome – wtedy Android nie pokaże ostrzeżenia.', 'Otwórz w Chrome'],
+    de: ['App installieren', 'Funktioniert offline wie eine normale App.', 'Installieren', 'Tippe unten in Safari auf „Teilen“ ⬆️ und dann auf „Zum Home-Bildschirm“.', 'Öffne das Browsermenü ⋮ und wähle „App installieren“ oder „Zum Startbildschirm hinzufügen“.', 'Öffne diese Seite in Chrome oder Safari, um sie zu installieren (Menü ⋯ → Im Browser öffnen).', 'Schließen', 'Auf Samsung-Handys über Chrome installieren – dann zeigt Android keine Warnung.', 'In Chrome öffnen'],
+    es: ['Instala la app', 'Funciona sin conexión, como una app normal.', 'Instalar', 'Toca Compartir ⬆️ abajo en Safari y luego «Añadir a pantalla de inicio».', 'Abre el menú del navegador ⋮ y elige «Instalar aplicación» o «Añadir a pantalla de inicio».', 'Abre esta página en Chrome o Safari para instalarla (menú ⋯ → Abrir en el navegador).', 'Cerrar', 'En móviles Samsung, instala desde Chrome: así Android no mostrará ninguna advertencia.', 'Abrir en Chrome'],
+    fr: ['Installer l’app', 'Fonctionne hors ligne, comme une app normale.', 'Installer', 'Touchez Partager ⬆️ en bas de Safari, puis « Sur l’écran d’accueil ».', 'Ouvrez le menu du navigateur ⋮ et choisissez « Installer l’application » ou « Ajouter à l’écran d’accueil ».', 'Ouvrez cette page dans Chrome ou Safari pour l’installer (menu ⋯ → Ouvrir dans le navigateur).', 'Fermer', 'Sur les téléphones Samsung, installez via Chrome – Android n’affichera alors pas d’avertissement.', 'Ouvrir dans Chrome'],
+    zh: ['安装应用', '可离线使用，就像普通应用一样。', '安装', '点击 Safari 底部的“分享”⬆️，然后选择“添加到主屏幕”。', '打开浏览器菜单 ⋮，选择“安装应用”或“添加到主屏幕”。', '请在 Chrome 或 Safari 中打开此页面进行安装（菜单 ⋯ → 在浏览器中打开）。', '关闭', '在三星手机上请通过 Chrome 安装，这样安卓就不会显示警告。', '在 Chrome 中打开'],
+    uk: ['Встанови застосунок', 'Працює офлайн, як звичайний застосунок.', 'Встановити', 'Натисни «Поділитися» ⬆️ унизу Safari, потім «На початковий екран».', 'Відкрий меню браузера ⋮ і вибери «Установити застосунок» або «Додати на головний екран».', 'Відкрий цю сторінку в Chrome або Safari, щоб установити (меню ⋯ → Відкрити в браузері).', 'Закрити', 'На телефонах Samsung встановлюй через Chrome – тоді Android не покаже попередження.', 'Відкрити в Chrome'],
+    lv: ['Instalē lietotni', 'Darbojas bezsaistē kā parasta lietotne.', 'Instalēt', 'Safari apakšā pieskaries “Kopīgot” ⬆️, tad “Pievienot sākuma ekrānam”.', 'Atver pārlūka izvēlni ⋮ un izvēlies “Instalēt lietotni” vai “Pievienot sākuma ekrānam”.', 'Atver šo lapu pārlūkā Chrome vai Safari, lai to instalētu (izvēlne ⋯ → Atvērt pārlūkā).', 'Aizvērt', 'Samsung tālruņos instalē caur Chrome – tad Android nerādīs brīdinājumu.', 'Atvērt pārlūkā Chrome']
   };
   const mq = q => { try { return matchMedia(q).matches; } catch (e) { return false; } };
   const standalone = () => mq('(display-mode: standalone)') || mq('(display-mode: fullscreen)') || mq('(display-mode: minimal-ui)') || navigator.standalone === true;
   const ua = navigator.userAgent || '';
   const ios = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  const samsung = /SamsungBrowser/.test(ua);
   const inApp = /FBAN|FBAV|Instagram|Messenger|Line\/|TikTok|Snapchat|\bwv\)/.test(ua);
   const KEY = 'paku.install.hidden';
   let prompt = null, bar = null, hintOn = false;
@@ -30,7 +31,7 @@
 #pakuInstall img{width:40px;height:40px;border-radius:10px;flex:none}
 #pakuInstall .pi-tx{flex:1;min-width:0}#pakuInstall b{display:block;font-size:15px}#pakuInstall small{display:block;font-size:13px;color:#5D5470}
 #pakuInstall .pi-hint{display:block;margin-top:.35rem;font-size:13.5px;color:#2A1F45;font-weight:600}
-#pakuInstall .pi-btn{flex:none;min-height:42px;padding:0 1rem;border:0;border-radius:999px;background:#7a5ca8;color:#fff;font:inherit;font-weight:700;cursor:pointer}
+#pakuInstall .pi-btn{display:inline-flex;align-items:center;text-decoration:none;flex:none;min-height:42px;padding:0 1rem;border:0;border-radius:999px;background:#7a5ca8;color:#fff;font:inherit;font-weight:700;cursor:pointer}
 #pakuInstall .pi-x{flex:none;width:36px;height:36px;border:0;border-radius:50%;background:transparent;color:#5D5470;font-size:20px;cursor:pointer}
 @media (prefers-color-scheme: dark){#pakuInstall{background:#2E2545;color:#F1EBFB;border-color:#45396A}#pakuInstall small{color:#C9BEDF}#pakuInstall .pi-hint{color:#F1EBFB}#pakuInstall .pi-x{color:#C9BEDF}}`;
     document.head.appendChild(s);
@@ -42,7 +43,14 @@
   function render() {
     if (!bar) return;
     const t = T[lang()];
-    const hint = ios ? t[3] : inApp ? t[5] : t[4];
+    const hint = ios ? t[3] : inApp ? t[5] : samsung ? t[7] : t[4];
+    /* Samsung Internet builds its own outdated package and Android warns about it – send people to Chrome instead */
+    if (samsung && !inApp) {
+      const url = 'intent://' + location.host + location.pathname + location.search + '#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=' + encodeURIComponent(location.href) + ';end';
+      bar.innerHTML = `<img src="${esc(icon())}" alt=""><span class="pi-tx"><b>${esc(t[0])}</b><span class="pi-hint">${esc(t[7])}</span></span><a class="pi-btn" href="${esc(url)}">${esc(t[8])}</a><button class="pi-x" type="button" aria-label="${esc(t[6])}">×</button>`;
+      bar.querySelector('.pi-x').onclick = () => { try { sessionStorage.setItem(KEY, '1'); } catch (e) { } remove(); };
+      return;
+    }
     bar.innerHTML = `<img src="${esc(icon())}" alt=""><span class="pi-tx"><b>${esc(t[0])}</b><small>${esc(t[1])}</small>${hintOn ? `<span class="pi-hint" role="status">${esc(hint)}</span>` : ''}</span>` +
       (ios && !prompt ? '' : `<button class="pi-btn" type="button">${esc(t[2])}</button>`) +
       `<button class="pi-x" type="button" aria-label="${esc(t[6])}">×</button>`;
