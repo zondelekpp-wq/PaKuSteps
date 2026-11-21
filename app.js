@@ -1,7 +1,7 @@
 /* PaKuSteps – one small step at a time. Offline; all data stays on the device. */
 'use strict';
 (() => {
-  const APP_VERSION = '1.3.0';
+  const APP_VERSION = '1.3.1';
   const LINKS = { paku: 'https://zondelekpp-wq.github.io/PaKu/' };       // apps a step can open (reading routine → PaKuReading; its address stays /PaKu/)
   /* PaKu family: this app works alone; shortcuts to other family apps appear only when they are used here (or switched on) */
   const F = window.PaKuFamily || null;

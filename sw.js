@@ -1,9 +1,9 @@
 /* PaKuSteps service worker – caches the whole app so it works fully offline.
    When you change any file, bump VERSION so users get the update. */
-const VERSION = '1.3.0';
+const VERSION = '1.3.1';
 const CACHE = 'pakusteps-' + VERSION;
 const ASSETS = [
-  './', './index.html', './app.js', './i18n.js', './family.js', './manifest.webmanifest',
+  './', './index.html', './app.js', './i18n.js', './family.js', './install.js', './manifest.webmanifest',
   './icon.svg', './icon-192.png', './icon-512.png', './icon-maskable-512.png', './apple-touch-icon.png', './qr.svg'
 ];
 
