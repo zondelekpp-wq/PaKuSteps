@@ -1,7 +1,7 @@
 /* PaKuSteps – one small step at a time. Offline; all data stays on the device. */
 'use strict';
 (() => {
-  const APP_VERSION = '1.3.1';
+  const APP_VERSION = '1.3.2';
   const LINKS = { paku: 'https://zondelekpp-wq.github.io/PaKu/' };       // apps a step can open (reading routine → PaKuReading; its address stays /PaKu/)
   /* PaKu family: this app works alone; shortcuts to other family apps appear only when they are used here (or switched on) */
   const F = window.PaKuFamily || null;
@@ -813,7 +813,9 @@
     let wantReload = false;
     navigator.serviceWorker.addEventListener('controllerchange', () => { if (wantReload) { wantReload = false; location.reload(); } });
     navigator.serviceWorker.register('./sw.js').then(reg => {
-      const offer = w => toast(t('update_ready'), t('reload'), () => { wantReload = true; w.postMessage('SKIP_WAITING'); });
+      /* on the home screen a new version is applied at once; in the middle of a task the user decides */
+      const offer = w => { if (current.screen === 'home') { wantReload = true; w.postMessage('SKIP_WAITING'); return; } toast(t('update_ready'), t('reload'), () => { wantReload = true; w.postMessage('SKIP_WAITING'); }); };
+      document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') reg.update().catch(() => { }); });
       if (reg.waiting && navigator.serviceWorker.controller) offer(reg.waiting);
       reg.addEventListener('updatefound', () => {
         const w = reg.installing; if (!w) return;
