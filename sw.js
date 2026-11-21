@@ -1,6 +1,6 @@
 /* PaKuSteps service worker – caches the whole app so it works fully offline.
    When you change any file, bump VERSION so users get the update. */
-const VERSION = '1.3.3';
+const VERSION = '1.3.4';
 const CACHE = 'pakusteps-' + VERSION;
 const ASSETS = [
   './', './index.html', './app.js', './i18n.js', './family.js', './install.js', './manifest.webmanifest',
